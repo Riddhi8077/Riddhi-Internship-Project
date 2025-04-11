@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Project- Book Your Ticket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Internship Project</h1>
+            <nav>
+                <ul>
+                    <li><a href="#booking-confirmation">Booking</a></li>
+                    <li><a href="#cancellation-refunds">Cancellation</a></li>
+                    <li><a href="#loyalty-program">Loyalty Program</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</button>
+        </div>
+    </header>
+    <main>
+        <section id="booking-form" class="container">
+            <h2>Book Your Ticket</h2>
+            <form id="bookingForm" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Booking Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+            <p id="booking-status" class="status-message"></p>
+        </section>
+        <section id="booking-confirmation" class="container">
+            <h2>Booking Confirmation</h2>
+            <p><strong>Booking ID:</strong> 123456</p>
+            <p><strong>Dates:</strong> 27-02-2025 to 27-03-2025</p>
+            <p><strong>Price:</strong> $500</p>
+            <p><strong>Cancellation Policy:</strong> 50% refund if canceled within 24 hours.</p>
+            <p><strong>Support Contact:</strong> support@experiencehub.com</p>
+            <button onclick="downloadETicket()" class="btn btn-secondary">Download E-Ticket</button>
+        </section>
+        <section id="cancellation-refunds" class="container">
+            <h2>Cancellation & Refunds</h2>
+            <p><strong>Booking ID:</strong> 123456</p>
+            <p><strong>Price:</strong> 500</p>
+            <label for="reason"><strong>Reason for Cancellation:</strong></label>
+            <select id="reason" class="form-select">
+                <option value="">Select a reason</option>
+                <option value="change-of-plans">Change of Plans</option>
+                <option value="financial-reasons">Financial Reasons</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="cancelBooking()" class="btn btn-danger">Cancel Booking</button>
+            <p id="refund-status" class="status-message"></p>
+        </section>
+        <section id="loyalty-program" class="container">
+            <h2>Loyalty Program</h2>
+            <p><strong>Points Earned:</strong> <span id="points-earned">0</span> points</p>
+            <p><strong>Current Tier:</strong> <span id="current-tier">Silver</span></p>
+            <p><strong>Exclusive Deals:</strong> <span id="exclusive-deals">10% off on your next booking!</span></p>
+            <button onclick="redeemPoints()" class="btn btn-success">Redeem Points</button>
+        </section>
+        <section id="points-history" class="container">
+            <h2>Points History</h2>
+            <ul id="points-history-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Riddhi Pachehara. All rights reserved.</p>
+        <p>Contact: Riddhipachehara@gmail.com</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
